@@ -3,8 +3,8 @@ const db = require('../config/db');
 
 const Order = {
     create: function (newOrder, callback) {
-      const query = 'INSERT INTO orders (name, email, model, price, color, interiorcolor, extras, orederID) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
-      const values = [newOrder.name, newOrder.email, newOrder.model, newOrder.price, newOrder.color, newOrder.interiorcolor, newOrder.extras, newOrder.orederID];
+      const query = 'INSERT INTO orders (name, email, model, price, color, interiorcolor, extras, orederID, salon) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+      const values = [newOrder.name, newOrder.email, newOrder.model, newOrder.price, newOrder.color, newOrder.interiorcolor, newOrder.extras, newOrder.orederID, salon];
 
       connection.query(query, values, (err, result) => {
         if (err) {
